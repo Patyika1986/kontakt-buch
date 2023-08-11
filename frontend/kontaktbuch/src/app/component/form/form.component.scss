@@ -1,0 +1,37 @@
+#main {
+    width: 100vw;
+    .section {
+        width: 95%;
+        margin: 1rem auto;
+        padding: .5rem;
+        background-color: var(--bgc);
+        #form {
+            display: flex;
+            flex-direction: column;
+            padding: .5rem;
+            input {
+                margin: .5rem 0;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom: 1px solid lightgrey;
+                padding: .5rem;
+            }
+
+            .save {
+                margin: 1rem 0;
+                color: #fff;
+                padding: 8px 22px;
+                border-radius: 6px;
+                border: none;
+                background: #7d2ae8;
+                transition: all 0.2s ease;
+
+                &:active {
+                    transform: scale(1.1);
+                    opacity: .9;
+                }
+            }
+        }
+    }
+}

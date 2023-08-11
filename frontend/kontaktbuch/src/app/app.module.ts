@@ -8,6 +8,7 @@ import { NavComponent } from './component/nav/nav.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { SettingsComponent } from './component/settings/settings.component';
 import { AddNewContactComponent } from './component/add-new-contact/add-new-contact.component';
+import { FormComponent } from './component/form/form.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AddNewContactComponent } from './component/add-new-contact/add-new-cont
     NavComponent,
     ContactComponent,
     SettingsComponent,
-    AddNewContactComponent
+    AddNewContactComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
