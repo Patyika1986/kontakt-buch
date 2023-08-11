@@ -9,6 +9,7 @@ import { ContactComponent } from './component/contact/contact.component';
 import { SettingsComponent } from './component/settings/settings.component';
 import { AddNewContactComponent } from './component/add-new-contact/add-new-contact.component';
 import { FormComponent } from './component/form/form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { FormComponent } from './component/form/form.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

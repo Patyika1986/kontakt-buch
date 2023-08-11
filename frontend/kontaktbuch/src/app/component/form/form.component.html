@@ -1,18 +1,38 @@
 <main id="main">
   <section class="section">
-    <form id="form">
+    <form id="form" [formGroup]="form" (ngSubmit)="sendForm(form)">
       <label>Vorname</label>
-      <input type="text" placeholder="Vorname" name="firstname" />
+      <input
+        type="text"
+        placeholder="Vorname"
+        name="firstname"
+        formControlName="firstname"
+      />
       <label>Nachname</label>
-      <input type="text" placeholder="Nachname" name="lastname" />
+      <input
+        type="text"
+        placeholder="Nachname"
+        name="lastname"
+        formControlName="lastname"
+      />
       <label>Geschlecht</label>
-      <input type="text" placeholder="Geschlecht" name="gender" />
+      <input
+        type="text"
+        placeholder="Geschlecht"
+        name="gender"
+        formControlName="gender"
+      />
       <label>E-Mail</label>
-      <input type="email" placeholder="E-Mail" name="email" />
+      <input
+        type="email"
+        placeholder="E-Mail"
+        name="email"
+        formControlName="email"
+      />
       <label>Tel</label>
-      <input type="tel" placeholder="Tel" name="tel" />
+      <input type="tel" placeholder="Tel" name="tel" formControlName="tel" />
 
-      <button class="save">Speichern</button>
+      <button class="save" [disabled]="form.invalid">Speichern</button>
     </form>
   </section>
 </main>
