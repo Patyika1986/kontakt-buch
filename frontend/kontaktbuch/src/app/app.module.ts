@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { OverviewComponent } from './component/overview/overview.component';
 import { NavComponent } from './component/nav/nav.component';
 import { ContactComponent } from './component/contact/contact.component';
+import { SettingsComponent } from './component/settings/settings.component';
+import { AddNewContactComponent } from './component/add-new-contact/add-new-contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OverviewComponent,
     NavComponent,
-    ContactComponent
+    ContactComponent,
+    SettingsComponent,
+    AddNewContactComponent
   ],
   imports: [
     BrowserModule,
