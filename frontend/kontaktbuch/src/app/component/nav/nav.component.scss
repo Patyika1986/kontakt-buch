@@ -1,0 +1,37 @@
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    background-color: var(--bgc);
+
+    .l {
+        font-size: 2.8rem;
+    }
+
+    .p {
+        font-size: 1.2rem;
+        font-weight: 600;
+        position: absolute;
+        top: 2rem;
+        left: 1rem;
+    }
+
+    .material-symbols-outlined {
+        font-size: 2rem;
+    }
+}
+
+#nav {
+    background-color: antiquewhite;
+    min-height: 20vh;
+    display: none;
+    
+    .nav-ul {
+        min-height: 20vh;
+        padding-left: .7rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
