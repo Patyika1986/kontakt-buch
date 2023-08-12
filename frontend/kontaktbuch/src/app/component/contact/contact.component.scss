@@ -5,3 +5,19 @@
     border-radius: .3rem;
     cursor: pointer;
 }
+
+
+#del {
+    margin: .3rem 0;
+    color: black;
+    padding: 8px 22px;
+    border-radius: 6px;
+    border: none;
+    background: #ff4d4d;
+    transition: all 0.2s ease;
+
+    &:active {
+        transform: scale(0.96);
+        opacity: .9;
+    }
+}

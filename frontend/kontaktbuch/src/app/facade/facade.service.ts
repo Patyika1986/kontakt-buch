@@ -17,6 +17,10 @@ export class FacadeService {
   private _addNewContact$ = new BehaviorSubject<Contacts[]>([]);
   public addNewContact$: Observable<Contacts[]> =
     this._addNewContact$.asObservable();
+
+    private _removeContact$ = new BehaviorSubject<Contacts[]>([]);
+    public removeContact$: Observable<Contacts[]> =
+      this._removeContact$.asObservable();
   
   constructor(private dataService: DataService) { }
 
@@ -47,6 +51,15 @@ export class FacadeService {
       .pipe(takeUntil(this.subscribtion$))
       .subscribe((cont: Contacts[]) => {
         this._addNewContact$.next(cont);
+      });
+  }
+
+  deleteContact(id: number): void {
+    this.dataService
+      .removeContact(id)
+      .pipe(takeUntil(this.subscribtion$))
+      .subscribe((user) => {
+        this._removeContact$.next(user);
       });
   }
 }

@@ -1,9 +1,17 @@
 <app-nav></app-nav>
 <div class="top">
   <h1>Kontakte</h1>
+  <input
+    class="search"
+    type="search"
+    placeholder="Suchen..."
+    name="search"
+    #filter
+    (input)="searchContact($event)"
+  />
 </div>
 <main id="main">
   <section class="contact">
-    <app-contact></app-contact>
+    <app-contact [contactList]="list"></app-contact>
   </section>
 </main>

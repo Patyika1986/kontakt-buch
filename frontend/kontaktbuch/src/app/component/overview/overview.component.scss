@@ -2,6 +2,15 @@
     width: 100vw;
     text-align: center;
     margin-top: 2rem;
+
+    .search {
+        width: 75%;
+        margin: 2rem 0;
+        padding: .7rem;
+        border-radius: .3rem;
+        border: 1px solid lightgray;
+        outline: none;
+    }
 }
 
 #main {

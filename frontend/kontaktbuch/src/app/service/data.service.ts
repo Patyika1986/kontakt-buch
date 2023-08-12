@@ -35,4 +35,10 @@ export class DataService {
       contact
     );
   }
+
+  removeContact(id: number): Observable<Contacts[]> {
+    return this.http.delete<Contacts[]>(
+      `http://localhost:5000/api/contact/${id}`
+    );
+  }
 }

@@ -11,9 +11,7 @@ export class NavComponent {
   mobileNav(){
     this.isActive = !this.isActive;
     const navUl = document.querySelector('#nav')as HTMLElement;
-    this.isActive ? navUl.style.display = 'block' : navUl.style.display = 'none';
-    console.log('run',this.isActive);
-    
+    this.isActive ? navUl.style.display = 'block' : navUl.style.display = 'none';    
   }
 
 }
