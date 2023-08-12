@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-notification',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./notification.component.scss']
 })
 export class NotificationComponent {
-
+  @Input({required:true}) updateSuccess: boolean = false;
+  @Input({required:true}) updateText: string = '';
 }

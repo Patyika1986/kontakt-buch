@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FacadeService } from 'src/app/facade/facade.service';
+
 
 @Component({
   selector: 'app-settings',
@@ -8,7 +8,7 @@ import { FacadeService } from 'src/app/facade/facade.service';
 })
 export class SettingsComponent {
 
-  constructor(private facadeService: FacadeService){}
+  constructor(){}
   
 
 

@@ -19,6 +19,9 @@ export class FormComponent implements OnInit, OnDestroy {
     private dataService: DataService
   ) {}
 
+  updateSuccess: boolean = false;
+  updateText: string = '';
+
   public form = this.formbuilder.group({
     firstname: [
       '',
@@ -94,7 +97,17 @@ export class FormComponent implements OnInit, OnDestroy {
       this.facadeService.updataContact(Number(this.id), form.value);
       this.facadeService.updateContact$
         .pipe(takeUntil(this.subscribtion$))
-        .subscribe();
+        .subscribe(element => {
+          if(element){
+            setTimeout(() => {
+              this.updateSuccess = true;
+              this.updateText = "Änderung wurde gespeichert !"
+            },1000);
+            setTimeout(() => {
+              this.updateSuccess = false;
+            },12000);
+          }
+        });
     }else if(form.status === "VALID"){
       this.addContact(form.value);
     }
@@ -108,7 +121,18 @@ export class FormComponent implements OnInit, OnDestroy {
       this.form.value.id = randomId.toString();
       this.newContact.push(contact)
       this.facadeService.addContact(this.newContact);
-      this.facadeService.addNewContact$.pipe(takeUntil(this.subscribtion$)).subscribe();
+      this.facadeService.addNewContact$.pipe(takeUntil(this.subscribtion$)).subscribe(element => {
+        if(element){
+          setTimeout(() => {
+            this.updateSuccess = true;
+            this.updateText = "Kontakt hinzugefügt erfolgreich !"
+          },1000);
+          setTimeout(() => {
+            this.updateSuccess = false;
+          },12000);
+        }
+      });
+
     }
   }
 
