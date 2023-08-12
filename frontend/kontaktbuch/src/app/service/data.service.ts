@@ -22,7 +22,6 @@ export class DataService {
   }
 
   updateContact(id: number, contact: any): Observable<any> {
-    console.log(id, contact, 'server');
     return this.http.put<any>(
       `http://localhost:5000/api/contact/${id}`,
       contact

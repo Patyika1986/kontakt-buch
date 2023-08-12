@@ -11,6 +11,7 @@ import { AddNewContactComponent } from './component/add-new-contact/add-new-cont
 import { FormComponent } from './component/form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NotificationComponent } from './component/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     ContactComponent,
     SettingsComponent,
     AddNewContactComponent,
-    FormComponent
+    FormComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
