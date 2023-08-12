@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { FacadeService } from 'src/app/facade/facade.service';
 import { Contacts } from 'src/app/interface/contact';
@@ -10,22 +11,28 @@ import { Contacts } from 'src/app/interface/contact';
 })
 export class ContactComponent implements OnInit, OnDestroy{
 
-  constructor(private facadeService: FacadeService){}
+  constructor(private facadeService: FacadeService,private router: Router){}
 
 
   subscribtion$ = new Subject();
   contactList:Contacts[] = [];
 
   ngOnInit(): void {
-this.getAllContacts();
+    this.getAllContacts();
   }
 
   getAllContacts(){
     this.facadeService.loadAllContacts();
     this.facadeService.contacts$.pipe(takeUntil(this.subscribtion$)).subscribe((contacts:Contacts[]) => {
       this.contactList = contacts;
-      console.log(this.contactList);
     });
+  }
+
+  editContact(id:number){
+    const contact = this.contactList.find((con) => con.id === id);
+    if (contact) {
+      this.router.navigate(['settings', contact.id]);
+    }
   }
 
   ngOnDestroy(): void {

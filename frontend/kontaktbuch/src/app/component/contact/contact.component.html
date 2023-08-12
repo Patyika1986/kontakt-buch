@@ -1,4 +1,8 @@
-<div class="contact" *ngFor="let contact of contactList">
+<div
+  class="contact"
+  *ngFor="let contact of contactList"
+  (click)="editContact(contact.id)"
+>
   <p>Vorname: {{ contact.firstname }}</p>
   <p>Nachname: {{ contact.lastname }}</p>
   <p>Geschlecht: {{ contact.gender }}</p>

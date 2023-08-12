@@ -15,4 +15,24 @@ export class DataService {
     const data = this.http.get<Contacts[]>('http://localhost:5000/api/contact');
     return data;
   }
+
+  getOneContact(id:string): Observable<Contacts[]> {
+      const contact = this.http.get<Contacts[]>(`http://localhost:5000/api/contact?=${id}`);
+      return contact
+  }
+
+  updateContact(id: number, contact: any): Observable<any> {
+    console.log(id, contact, 'server');
+    return this.http.put<any>(
+      `http://localhost:5000/api/contact/${id}`,
+      contact
+    );
+  }
+
+  addNewContact(contact: Contacts[]): Observable<Contacts[]> {
+    return this.http.post<Contacts[]>(
+      `http://localhost:5000/api/contact`,
+      contact
+    );
+  }
 }

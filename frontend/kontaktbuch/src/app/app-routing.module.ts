@@ -7,6 +7,7 @@ import { AddNewContactComponent } from './component/add-new-contact/add-new-cont
 const routes: Routes = [
   { path: 'overview', component: OverviewComponent },
   { path: 'settings', component: SettingsComponent },
+  { path: 'settings/:id', component: SettingsComponent },
   { path: 'add-new-contact', component: AddNewContactComponent},
   { path: '', redirectTo: 'overview', pathMatch: 'full' },
 ];
